@@ -1,4 +1,6 @@
 FROM rocker/verse:4.4.2
 
-RUN /usr/local/lib/R/site-library/littler/examples/installBioc.r --error GENESIS
-
+    # install GENESIS R package
+RUN /usr/local/lib/R/site-library/littler/examples/installBioc.r --error GENESIS && \
+    `# install GGally R package` \
+    install.r GGally 
