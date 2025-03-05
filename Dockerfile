@@ -1,8 +1,8 @@
 FROM rocker/verse:4.4.2
-ENV PLINK_VERSION       20241022
-ENV PLINK_ZIP           plink_linux_x86_64_$PLINK_VERSION.zip
-ENV PLINK_HOME          /usr/local/plink
-ENV PATH                $PLINK_HOME:$PATH
+ENV PLINK_VERSION=20241022
+ENV PLINK_ZIP=plink_linux_x86_64_${PLINK_VERSION}.zip
+ENV PLINK_HOME=/usr/local/plink
+ENV PATH=${PLINK_HOME}:${PATH}
 
     # install GENESIS R package
 RUN /usr/local/lib/R/site-library/littler/examples/installBioc.r --error GENESIS && \
