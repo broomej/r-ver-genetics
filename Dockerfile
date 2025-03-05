@@ -33,7 +33,7 @@ RUN install2.r GGally && \
     git clone --depth 1 --recurse-submodules --branch $SAMTOOLS_VERSION https://github.com/samtools/htslib.git && \
     git clone --depth 1 --recurse-submodules --branch $SAMTOOLS_VERSION https://github.com/samtools/bcftools.git && \
     cd bcftools && \
-    autoheader && autoconf && ./configure --enable-libgsl --enable-perl-filters && \
+    autoheader && autoconf && ./configure && \
     make && \
     make install && \
     # `install GENESIS R package` \
