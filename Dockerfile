@@ -14,7 +14,7 @@ ENV PERL5LIB=/app/vcftools-${VCFTOOLS_VERSION}/share/perl
 ENV SAMTOOLS_VERSION=1.21
 
 # install GGally R package
-RUN install2.r GGally \
+RUN install2.r GGally && \
     `# install PLINK` \
     wget https://s3.amazonaws.com/plink1-assets/$PLINK_ZIP && \
     unzip $PLINK_ZIP -d $PLINK_HOME && \
@@ -35,7 +35,7 @@ RUN install2.r GGally \
     cd bcftools && \
     autoheader && autoconf && ./configure --enable-libgsl --enable-perl-filters && \
     make && \
-    make install \
+    make install && \
     # `install GENESIS R package` \
     installBioc.r  --error GENESIS
 
