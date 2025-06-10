@@ -7,8 +7,13 @@ ENV PATH=${PLINK_HOME}:${PATH}
 # There are some littler utilities not automatically added to path
 ENV PATH=/usr/local/lib/R/site-library/littler/examples/:${PATH}
 
-# install GGally R package
-RUN install2.r GGally && \
+RUN \
+    `# navigate to temp directory for setup` \
+     mkdir setuptemp && cd setuptemp && \
+    `# update packages` \
+    apt-get update && \
+    `# install gnu parallel` \
+    apt-get install -y parallel && \
     `# install PLINK` \
     wget https://s3.amazonaws.com/plink1-assets/$PLINK_ZIP && \
     unzip $PLINK_ZIP -d $PLINK_HOME && \
@@ -33,6 +38,10 @@ RUN install2.r GGally && \
     autoheader && autoconf && ./configure && \
     make && \
     make install && \
+    `# install GGally R package` \
+    install2.r GGally && \
     # `install GENESIS R package` \
-    installBioc.r  --error GENESIS
+    installBioc.r --error GENESIS && \
+    # `clean up setup directory` \
+    cd ../ && rm -rf setuptemp
 
