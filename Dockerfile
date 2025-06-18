@@ -1,4 +1,4 @@
-FROM rocker/verse:latest
+FROM rocker/binder:4
 
 ENV PLINK_VERSION=latest
 ENV PLINK_ZIP=plink_linux_x86_64_${PLINK_VERSION}.zip
