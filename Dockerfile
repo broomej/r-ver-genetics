@@ -1,4 +1,4 @@
-FROM rocker/binder:4
+FROM rocker/verse:latest
 
 USER root
 
