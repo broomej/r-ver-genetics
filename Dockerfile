@@ -1,5 +1,7 @@
 FROM rocker/binder:4
 
+USER root
+
 ENV PLINK_VERSION=latest
 ENV PLINK_ZIP=plink_linux_x86_64_${PLINK_VERSION}.zip
 ENV PLINK_HOME=/usr/local/plink
