@@ -14,8 +14,8 @@ RUN \
      mkdir setuptemp && cd setuptemp && \
     `# update packages` \
     apt-get update && \
-    `# install gnu parallel and jq ` \
-    apt-get install -y parallel jq && \
+    `# install gnu parallel snakemake and jq ` \
+    apt-get install -y parallel snakemake jq && \
     `# install PLINK` \
     wget https://s3.amazonaws.com/plink1-assets/$PLINK_ZIP && \
     unzip $PLINK_ZIP -d $PLINK_HOME && \
