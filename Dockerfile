@@ -13,7 +13,7 @@ RUN \
     `# navigate to temp directory for setup` \
      mkdir setuptemp && cd setuptemp && \
     `# update packages` \
-    apt-get update && apt-get upgrade && \
+    apt-get update && apt-get upgrade -y && \
     `# install gnu parallel snakemake and jq ` \
     apt-get install -y parallel snakemake jq && \
     `# install PLINK` \
