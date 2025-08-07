@@ -1,4 +1,4 @@
-FROM rocker/binder:4
+FROM rocker/verse:4.5.1
 
 USER root
 
@@ -13,7 +13,7 @@ RUN \
     `# navigate to temp directory for setup` \
      mkdir setuptemp && cd setuptemp && \
     `# update packages` \
-    apt-get update && \
+    apt-get update && apt-get upgrade -y && \
     `# install gnu parallel snakemake and jq ` \
     apt-get install -y parallel snakemake jq && \
     `# install PLINK` \
