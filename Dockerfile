@@ -17,7 +17,7 @@ RUN \
     `# install gnu parallel pip and jq ` \
     apt-get install -y parallel jq python3-pip && \
     `# install snakemake` \
-    pip3 install snakemake && \
+    pip3 install snakemake --break-system-packages && \
     `# install PLINK` \
     wget https://s3.amazonaws.com/plink1-assets/$PLINK_ZIP && \
     unzip $PLINK_ZIP -d $PLINK_HOME && \
