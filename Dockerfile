@@ -16,7 +16,6 @@ RUN \
     apt-get update && apt-get upgrade -y && \
     `# install gnu parallel pip and jq ` \
     apt-get install -y parallel jq python3-pip && \
-    python3 -m ensurepip --upgrade && \
     `# install snakemake` \
     pip3 install snakemake && \
     `# install PLINK` \
