@@ -21,6 +21,6 @@ RUN \
     wget "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh" && \
     sudo bash Miniforge3-$(uname)-$(uname -m).sh -b && \
     `# install snakemake ` \
-    conda create -c conda-forge -c bioconda -c nodefaults -n snakemake snakemake && \
+    /opt/miniforge3/bin/conda create -c conda-forge -c bioconda -c nodefaults -n snakemake snakemake && \
     # `clean up setup directory` \
     cd ../ && rm -rf setuptemp
