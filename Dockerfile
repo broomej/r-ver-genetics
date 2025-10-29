@@ -18,7 +18,7 @@ RUN \
     apt-get install -y parallel jq && \
     `# install miniforge ` \
     wget "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh" && \
-    bash Miniforge3-$(uname)-$(uname -m).sh -b -p /opt/ && \
+    bash Miniforge3-$(uname)-$(uname -m).sh -b -p /opt/miniforge3/ && \
     /opt/miniforge3/bin/conda init bash && \
     `# install snakemake ` \
     /opt/miniforge3/bin/conda create -c conda-forge -c bioconda -c nodefaults -n snakemake snakemake && \
