@@ -15,10 +15,10 @@ RUN \
     `# update packages` \
     apt-get update && apt-get upgrade -y && \
     `# install gnu parallel pip and jq ` \
-    apt-get install -y parallel jq python3-venv && \
+    apt-get install -y parallel jq python3-pip && \
     python3 -m ensurepip --upgrade && \
     `# install snakemake` \
-    pip install snakemake && \
+    pip3 install snakemake && \
     `# install PLINK` \
     wget https://s3.amazonaws.com/plink1-assets/$PLINK_ZIP && \
     unzip $PLINK_ZIP -d $PLINK_HOME && \
