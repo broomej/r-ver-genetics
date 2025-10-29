@@ -14,8 +14,13 @@ RUN \
      mkdir setuptemp && cd setuptemp && \
     `# update packages` \
     apt-get update && apt-get upgrade -y && \
-    `# install gnu parallel snakemake and jq ` \
-    apt-get install -y parallel snakemake jq && \
+    `# install gnu parallel and jq ` \
+    apt-get install -y parallel jq && \
+    `# install miniforge ` \
+    wget "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh" && \
+    bash Miniforge3-$(uname)-$(uname -m).sh -b && \
+    `# install snakemake ` \
+    conda create -c conda-forge -c bioconda -c nodefaults -n snakemake snakemake && \
     `# install PLINK` \
     wget https://s3.amazonaws.com/plink1-assets/$PLINK_ZIP && \
     unzip $PLINK_ZIP -d $PLINK_HOME && \
